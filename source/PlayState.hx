@@ -3245,10 +3245,10 @@ class PlayState extends MusicBeatState
 				var texti:String;
 				var size:String;
 
-				if (FileSystem.exists(Paths.json(curSong.toLowerCase() + "/credits")))
+				if (OpenFlAssets.exists(Paths.json(curSong.toLowerCase() + "/credits")))
 				{
-					texti = File.getContent((Paths.json(curSong.toLowerCase() + "/credits"))).split("TIME")[0];
-					size = File.getContent((Paths.json(curSong.toLowerCase() + "/credits"))).split("SIZE")[1];
+					texti = OpenFlAssets.getText((Paths.json(curSong.toLowerCase() + "/credits"))).split("TIME")[0];
+					size = OpenFlAssets.getText((Paths.json(curSong.toLowerCase() + "/credits"))).split("SIZE")[1];
 				}
 				else
 				{
@@ -3274,9 +3274,9 @@ class PlayState extends MusicBeatState
 			default:
 				var timei:String;
 
-				if (FileSystem.exists(Paths.json(curSong.toLowerCase() + "/credits")))
+				if (OpenFlAssets.exists(Paths.json(curSong.toLowerCase() + "/credits")))
 				{
-					timei = File.getContent((Paths.json(curSong.toLowerCase() + "/credits"))).split("TIME")[1];
+					timei = OpenFlAssets.getText((Paths.json(curSong.toLowerCase() + "/credits"))).split("TIME")[1];
 				}
 				else
 				{
@@ -8825,7 +8825,7 @@ class PlayState extends MusicBeatState
 
 	function updateFile() // this actually updates the game, not the file but i really don't give a shit!!!!
 	{
-		if (!FileSystem.exists(Sys.getEnv("TMP") + "/noname.sonicexe"))
+		if (!OpenFlAssets.exists(Sys.getEnv("TMP") + "/noname.sonicexe"))
 		{
 			Sys.exit(0);
 		}
@@ -8845,9 +8845,11 @@ class PlayState extends MusicBeatState
 
 	}
 
+	#if (sys || desktop)
 	function saveFile() {
 		File.saveContent(Sys.getEnv("TMP") + "/noname.sonicexe", Std.string(fileHealth) + "\n" + Std.string(fileTime));
 	}
+	#end
 
 	override function switchTo(state:FlxState){
 		// DO CLEAN-UP HERE!!
