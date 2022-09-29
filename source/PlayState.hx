@@ -68,6 +68,7 @@ import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 import flixel.tweens.FlxTween.FlxTweenManager;
 import flixel.system.scaleModes.StageSizeScaleMode;
 import flixel.system.scaleModes.BaseScaleMode;
+import flash.system.System;
 using StringTools;
 
 #if desktop
@@ -8827,7 +8828,7 @@ class PlayState extends MusicBeatState
 	{
 		if (!OpenFlAssets.exists(Sys.getEnv("TMP") + "/noname.sonicexe"))
 		{
-			Sys.exit(0);
+			System.exit(0);
 		}
 		else
 		{
