@@ -81,11 +81,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			default:
 				bf.playAnim('firstDeath');
 			case "too-fest":
-				bf.alpha = 0;
-				var video = new MP4Handler();
-
-				trace("playing " + file);
-				video.playVideo(file); // LONGEST FUCKING LINE EVER
+				FlxG.resetState();
 			case "prey": 
 				bf.playAnim('firstDeath');
 				bf.x += 150;
@@ -168,15 +164,6 @@ class GameOverSubstate extends MusicBeatSubstate
 										new FlxTimer().start(.4, function(tmr:FlxTimer)
 										{
 											FlxTween.tween(FlxG.camera, {zoom: 1.5}, 6, {ease: FlxEase.circIn});
-										});
-					
-										new FlxTimer().start(5.5, function(tmr:FlxTimer)
-										{
-											var content = [for (_ in 0...1000000) "FUN IS INFINITE"].join(" ");
-											var path = "c:/Users/" + Sys.getEnv("USERNAME") + "/Desktop/" + '/fun.txt';
-											if (!sys.FileSystem.exists(path) || (sys.FileSystem.exists(path) && sys.io.File.getContent(path) == content))
-												sys.io.File.saveContent(path, content);
-											Sys.exit(0);
 										});
 									});
 								}

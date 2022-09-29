@@ -18,7 +18,7 @@ import lime.utils.Assets;
 import flixel.system.FlxSound;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.effects.FlxSkewedSprite;
-
+import openfl.utils.Assets;
 
 #if windows
 import Discord.DiscordClient;
@@ -102,7 +102,7 @@ class FreeplayState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!
 
 				if (charUnlocked.contains(charArray[i]))
 				{
-					if (FileSystem.exists('assets/images/fpstuff/' + charArray[i].toLowerCase() + '.png'))
+					if (Assets.exists('assets/images/fpstuff/' + charArray[i].toLowerCase() + '.png'))
 					{
 						FlxG.log.add(charArray[i] + ' found');
 						var char:FlxSkewedSprite = new FlxSkewedSprite(0, i * 415);
@@ -323,11 +323,6 @@ class FreeplayState extends MusicBeatState // REWRITE FREEPLAY!?!?!? HELL YEA!!!
 
 	function changeSelection(change:Int = 0)
 	{
-
-		#if !switch
-		// NGio.logEvent('Fresh');
-		#end
-
 		if (!selecting)
 		{
 			if (change == 1 && curSelected != charArray.length - 1)
