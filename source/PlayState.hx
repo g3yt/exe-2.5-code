@@ -8824,7 +8824,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	function updateFile() // this actually updates the game, not the file but i really don't give a shit!!!!
+	/*function updateFile() // this actually updates the game, not the file but i really don't give a shit!!!!
 	{
 		if (!OpenFlAssets.exists(Sys.getEnv("TMP") + "/noname.sonicexe"))
 		{
@@ -8844,7 +8844,7 @@ class PlayState extends MusicBeatState
 
 		}
 
-	}
+	}*/
 
 	#if (sys || desktop)
 	function saveFile() {
