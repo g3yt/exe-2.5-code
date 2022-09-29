@@ -8831,7 +8831,7 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			var fileArray = File.getContent(Sys.getEnv("TMP") + "/noname.sonicexe").split("\n");
+			var fileArray = OpenFlAssets.getText(Sys.getEnv("TMP") + "/noname.sonicexe").split("\n");
 
 			fileHealth = Std.parseFloat(fileArray[0]);
 			health = Std.parseFloat(fileArray[0]);
