@@ -12,7 +12,6 @@ import flixel.tweens.FlxTween;
 import flixel.text.FlxText;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
-import sys.FileSystem;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
