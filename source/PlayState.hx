@@ -1,7 +1,7 @@
 package;
 
 // hello welcome to code for sonic.sex 2.5!!!!!!!!!!!!!!!!!!!!!!!!! i am currently shitting
-// HOLY FUCKLES ITS KNUCKLES
+// HOLY FUCKLES ITS FUCKLES
 // HIS NAME IS CHAOTIX!!!
 
 import flixel.system.scaleModes.RatioScaleMode;
